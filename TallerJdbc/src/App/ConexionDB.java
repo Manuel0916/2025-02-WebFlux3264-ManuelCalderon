@@ -4,9 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Clase responsable de devolver conexiones JDBC a la BD 'universidad'.
- */
+
 public class ConexionDB {
 
 

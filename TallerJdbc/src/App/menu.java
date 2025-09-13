@@ -47,7 +47,7 @@ class MainMenu {
         EstadoCivil estado = leerEstadoCivil();
         Estudiante e = new Estudiante(nombre, apellido, correo, edad, estado);
         boolean ok = dao.insertar(e);
-        System.out.println(ok ? "✅ Insertado correctamente." : "❌ No se pudo insertar.");
+        System.out.println(ok ? "✅ Insertado correctamente." : " No se pudo insertar.");
     }
 
     private static void actualizarEstudiante() throws SQLException {
@@ -65,7 +65,7 @@ class MainMenu {
         EstadoCivil estado = leerEstadoCivil();
         Estudiante s = new Estudiante(nombre, apellido, correo, edad, estado);
         boolean ok = dao.actualizarPorCorreo(correo, s);
-        System.out.println(ok ? "✅ Actualizado correctamente." : "❌ No se pudo actualizar.");
+        System.out.println(ok ? "✅ Actualizado correctamente." : "No se pudo actualizar.");
     }
 
     private static void eliminarEstudiante() throws SQLException {
@@ -79,7 +79,7 @@ class MainMenu {
         String confirm = readString("Confirma eliminar a " + s.getNombre() + " " + s.getApellido() + " (s/n): ");
         if (confirm.equalsIgnoreCase("s")) {
             boolean ok = dao.eliminarPorCorreo(correo);
-            System.out.println(ok ? "✅ Eliminado correctamente." : "❌ No se pudo eliminar.");
+            System.out.println(ok ? "✅ Eliminado correctamente." : "No se pudo eliminar.");
         } else {
             System.out.println("Eliminación cancelada.");
         }
