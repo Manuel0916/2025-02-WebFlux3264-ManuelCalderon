@@ -19,12 +19,12 @@ public class Estudiante {
         this.estadoCivil = estadoCivil;
     }
 
-    // Constructor sin id (para insertar/actualizar por correo)
+
     public Estudiante(String nombre, String apellido, String correo, int edad, EstadoCivil estadoCivil) {
         this(0, nombre, apellido, correo, edad, estadoCivil);
     }
 
-    // getters y setters
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
