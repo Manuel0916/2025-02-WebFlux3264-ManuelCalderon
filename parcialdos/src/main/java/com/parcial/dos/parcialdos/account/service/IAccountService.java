@@ -1,17 +1,22 @@
 package com.parcial.dos.parcialdos.account.service;
 
-import java.util.List;
-
+import com.parcial.dos.parcialdos.account.dto.AccountOwnerBalanceDTO;
 import com.parcial.dos.parcialdos.account.dto.AccountRequestDTO;
 import com.parcial.dos.parcialdos.account.dto.AccountResponseDTO;
-import com.parcial.dos.parcialdos.account.dto.AccountOwnerBalanceDTO;
+
+import java.util.List;
+import java.util.Optional;
 
 public interface IAccountService {
-    AccountResponseDTO create(AccountRequestDTO request);
-    List<AccountResponseDTO> getAll();
-    AccountResponseDTO getById(Long id);
-    String update(Long id, AccountRequestDTO request);
-    void delete(Long id);
-
-    AccountOwnerBalanceDTO findByNumeroCuenta(String numeroCuenta);
+    AccountResponseDTO createAccount(AccountRequestDTO accountRequestDTO);
+    
+    List<AccountResponseDTO> getAllAccounts();
+    
+    Optional<AccountResponseDTO> getAccountById(Long id);
+    
+    String updateAccountBalance(Long id, AccountRequestDTO accountRequestDTO);
+    
+    void deleteAccount(Long id);
+    
+    Optional<AccountOwnerBalanceDTO> findByAccountNumber(String accountNumber);
 }
